@@ -1,12 +1,31 @@
-function Circle(radius){
-    this.radius = radius;
-    this.draw = function(){
-        console.log('draw');
-    }
+// value type
+let x = 10;
+let y = x;
+
+x = 20;
+
+// reference type
+let z = {value: 10};
+let b = z;
+z.value = 20;
+
+// value type
+let number = 10;
+
+function increase(number){
+    number++;
 }
 
-const circle = new Circle(1);
-circle.draw();
+increase(number);
+console.log(number);
 
-Circle.call({}, 1);
-Circle.apply({}, [1]);
+
+// reference type
+let count = {value: 10};
+
+function increaseCount(count){
+    count.value++;
+}
+
+increaseCount(count);
+console.log(count);
