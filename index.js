@@ -1,31 +1,20 @@
-// value type
-let x = 10;
-let y = x;
-
-x = 20;
-
-// reference type
-let z = {value: 10};
-let b = z;
-z.value = 20;
-
-// value type
-let number = 10;
-
-function increase(number){
-    number++;
+function Circle(radius){
+    this.radius = radius;
+    this.draw = function(){
+        console.log('draw');
+    }
 }
 
-increase(number);
-console.log(number);
+const circle = new Circle(1);
+circle.draw();
 
-
-// reference type
-let count = {value: 10};
-
-function increaseCount(count){
-    count.value++;
+circle.location = {
+    x: 1
 }
 
-increaseCount(count);
-console.log(count);
+circle['speed'] = 50;
+const propertyname = 'angle';
+circle[propertyname] = 180;
+
+// delete prop
+delete circle.speed;
