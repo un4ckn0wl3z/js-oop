@@ -14,6 +14,10 @@ function Circle(radius, color) {
     this.radius = radius;
 }
 extend(Circle, Shape);
+Circle.prototype.duplicate = function () {
+    Shape.prototype.duplicate.call(this);
+    console.log('Circle duplicate');
+}
 
 
 Circle.prototype.draw = function () {
