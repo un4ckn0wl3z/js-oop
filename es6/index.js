@@ -1,14 +1,17 @@
+const _radius = Symbol();
+const _draw = Symbol();
+
+
 class Circle {
     constructor(radius) {
-        this.radius = radius;
-        this.move = function(){
-            console.log('move');
-        }
+        this[_radius] = radius;
     }
+    [_draw](){
 
-    draw() {
-        console.log('draw');
     }
 }
 
-const c1 = new Circle(1);
+const c = new Circle(1);
+
+
+
