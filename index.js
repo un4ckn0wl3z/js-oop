@@ -1,33 +1,23 @@
+// 026 6- Prototype vs. Instance Members
+
 function Circle(radius) {
+    // instance members
     this.radius = radius;
-    this.draw = function () {
-        console.log('draw');
+    this.move = function () {
+        // this.draw();
+        console.log('move');
     }
 }
 
-const circle = new Circle(1);
-
-
-let person = { name: 'Anuwat' };
-
-Object.defineProperty(person, 'name', {
-    writable: false,
-    enumerable: false
-});
-
-person.name = 'Pansa';
-console.log(person.name);
-
-
-// console.log(person);
-
-for (let key in person) {
-    console.log(key);
+// prototype members
+Circle.prototype.draw = function () {
+    this.move();
+    console.log('draw');
 }
 
-// console.log(Object.keys(person));
+Circle.prototype.toString = function () {
+    return 'Circle with radius ' + this.radius;
+}
 
-// let objectBase = Object.getPrototypeOf(person);
-// let descriptor =  Object.getOwnPropertyDescriptor(objectBase, 'toString');
-
-// console.log(descriptor);
+const c1 = new Circle(1);
+const c2 = new Circle(1);
