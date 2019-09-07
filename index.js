@@ -1,29 +1,33 @@
 function Circle(radius) {
     this.radius = radius;
-    let defaultLocaltion = {
-        x: 0,
-        y: 0
-    }
-
-    this.getDefaultLocation = function(){
-        return defaultLocaltion;
-    }
-
     this.draw = function () {
         console.log('draw');
     }
-
-    Object.defineProperty(this, 'defaultLocaltion',{
-        get: function(){
-            return defaultLocaltion;
-        },
-        set: function(value){
-            if(!value.x || !value.y)
-                throw new Error('Invalid locaction.');
-            defaultLocaltion = value;
-        }
-    });
 }
 
 const circle = new Circle(1);
-circle.defaultLocaltion = 1;
+
+
+let person = { name: 'Anuwat' };
+
+Object.defineProperty(person, 'name', {
+    writable: false,
+    enumerable: false
+});
+
+person.name = 'Pansa';
+console.log(person.name);
+
+
+// console.log(person);
+
+for (let key in person) {
+    console.log(key);
+}
+
+// console.log(Object.keys(person));
+
+// let objectBase = Object.getPrototypeOf(person);
+// let descriptor =  Object.getOwnPropertyDescriptor(objectBase, 'toString');
+
+// console.log(descriptor);
