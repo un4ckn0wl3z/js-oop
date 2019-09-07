@@ -6,10 +6,12 @@ function Circle(radius) {
     }
     let computeOptimumLocation = function(factor){
         // ...
+        // defaultLocaltion
+        // this.radius
     }
     this.draw = function () {
         let x, y;
-        computeOptimumLocation(defaultLocaltion);
+        computeOptimumLocation(0.1);
         console.log('draw');
     }
 }
