@@ -1,20 +1,17 @@
-function Circle(radius){
+function Circle(radius) {
     this.radius = radius;
-    this.draw = function(){
+    let defaultLocaltion = {
+        x: 0,
+        y: 0
+    }
+    let computeOptimumLocation = function(factor){
+        // ...
+    }
+    this.draw = function () {
+        computeOptimumLocation(defaultLocaltion);
         console.log('draw');
     }
 }
 
 const circle = new Circle(1);
-
-for(let key in circle){
-    if (typeof circle[key] !== 'function')
-        console.log(key, circle[key]);
-}
-
-const keys =  Object.keys(circle);
-console.log(keys);
-
-if('radius' in circle){
-    console.log('Circle has radius.');
-}
+circle.defaultLocaltion = false;
