@@ -15,7 +15,7 @@ function Circle(radius, color) {
 }
 extend(Circle, Shape);
 Circle.prototype.duplicate = function () {
-    Shape.prototype.duplicate.call(this);
+    //Shape.prototype.duplicate.call(this);
     console.log('Circle duplicate');
 }
 
@@ -28,9 +28,18 @@ function Square(size) {
     this.size = size;
 }
 extend(Square, Shape);
-
-
+Square.prototype.duplicate = function () {
+    //Shape.prototype.duplicate.call(this);
+    console.log('Square duplicate');
+}
 
 const s = new Shape();
 const c = new Circle(1, 'red');
 
+const shapes = [
+    new Circle(),
+    new Square()
+];
+
+
+for (let shape of shapes) shape.duplicate();
