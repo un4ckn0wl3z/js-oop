@@ -6,15 +6,15 @@ function Circle(radius){
 }
 
 const circle = new Circle(1);
-circle.draw();
 
-circle.location = {
-    x: 1
+for(let key in circle){
+    if (typeof circle[key] !== 'function')
+        console.log(key, circle[key]);
 }
 
-circle['speed'] = 50;
-const propertyname = 'angle';
-circle[propertyname] = 180;
+const keys =  Object.keys(circle);
+console.log(keys);
 
-// delete prop
-delete circle.speed;
+if('radius' in circle){
+    console.log('Circle has radius.');
+}
