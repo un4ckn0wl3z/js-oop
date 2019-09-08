@@ -3,19 +3,23 @@ class Shape {
         this.color = color;
     }
     move() {
-        console.log('move');
+        console.log('Shape move');
     }
-
 }
 
 class Circle extends Shape {
-    constructor(color, radius){
+    constructor(color, radius) {
         super(color);
         this.radius = radius;
     }
 
     draw() {
         console.log('draw');
+    }
+
+    move() {
+        super.move();
+        console.log('Circle move');
     }
 }
 
